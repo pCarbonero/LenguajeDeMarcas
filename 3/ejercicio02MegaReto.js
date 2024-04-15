@@ -87,6 +87,7 @@ function borraCasillas(objeto){
 function creaTabla(){
      // append
      $('#tabla').empty(); 
+     $('#tabla').append('<tr><td>nombre</td><td>edad</td><td>ciudad</td></tr>');
      for(let i = 0; i<ArrObjetos.length; i++){
         $('#tabla').append('<tr id= "t'+i+ '" onclick="borraUno('+i+')"><td>' + ArrObjetos[i].atributo1 +'</td><td>' 
         + ArrObjetos[i].atributo2 +'</td><td>' + ArrObjetos[i].atributo3 + '</td></tr>')
