@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Barrio
+[
+<!ELEMENT  Barrio (vecinos+)>
+<!ELEMENT vecinos (dirección, numeroHabitantes, mascotas?)>
+<!ELEMENT dirección (calle, numero)>
+<!ELEMENT calle (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT numeroHabitantes (#PCDATA)>
+<!ELEMENT mascotas (mascota+)>
+<!ELEMENT mascota ANY>
+]>
+
+<Barrio>
+<vecinos>
+  <dirección>
+    <calle></calle>
+    <numero></numero>
+  </dirección>
+  <numeroHabitantes></numeroHabitantes>
+  <mascotas>
+    <mascota></mascota>
+  </mascotas>
+</vecinos>
+</Barrio>

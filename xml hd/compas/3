@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Empresa
+[
+<!ELEMENT Empresa (Fabricas, Tiendas)>
+<!ELEMENT Fabricas (fabrica+)>
+<!ELEMENT fabrica (proveedor, empleados+, flota?)>
+<!ELEMENT Tiendas (tienda+)>
+<!ELEMENT tienda (dueño+, empleados+, chocolates+)>
+<!ELEMENT chocolates (codigo, id)>
+<!ELEMENT proveedor (#PCDATA)>
+<!ELEMENT empleados (#PCDATA)>
+<!ELEMENT flota (#PCDATA)>
+<!ELEMENT dueño (#PCDATA)>
+<!ELEMENT codigo (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+]>
+
+<Empresa>
+  <Fabricas>
+    <fabrica>
+      <proveedor>Malcos</proveedor>
+      <empleados>100</empleados>
+      <flota></flota>
+    </fabrica>
+  </Fabricas>
+  <Tiendas>
+    <tienda>
+      <dueño>Raul</dueño>
+      <empleados>20</empleados>
+      <chocolates>
+        <codigo>545461</codigo>
+        <id>5a</id>
+      </chocolates>
+    </tienda>
+  </Tiendas>
+</Empresa>

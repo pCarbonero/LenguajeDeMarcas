@@ -1,0 +1,23 @@
+EJ 1
+/geografia/ue/pais/@nombre
+
+EJ2
+/geografia/paises/pais[nombre="Suecia"]/capital/text()
+
+EJ 3
+/geografia/otan/pais[@entrada < 1980]/@nombre
+
+EJ 4
+/geografia/paises/pais/datos[@poblacion < 50]/../@tipo
+
+EJ5
+/geografia/paises/pais[@tipo = "república"]/datos[@superficie < 500000]/@poblacion
+
+EJ6
+/geografia/paises/pais[nombre = /geografia/ue/pais/@nombre]/capital/text()
+
+EJ 7
+/geografia/otan/pais[@nombre = /geografia/ue/pais/@nombre]/@nombre
+
+EJ 8
+/geografia/ue/pais[not(@nombre = /geografia/otan/pais/@nombre)]/@nombre

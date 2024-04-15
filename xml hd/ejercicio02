@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE alumno
+[
+<!ELEMENT alumno (nombre, apellidos, edad, curso, instituto)*>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT curso (#PCDATA)>
+<!ELEMENT instituto (#PCDATA)>
+]>
+
+<alumno>
+  <nombre>Marcos</nombre>
+  <apellidos>Holguín</apellidos>
+  <edad>18</edad>
+  <curso>1º</curso>
+  <instituto>IES Ramón del Valle Inclán</instituto>
+</alumno>

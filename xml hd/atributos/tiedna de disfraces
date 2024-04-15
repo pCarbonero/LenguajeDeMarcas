@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tienda
+[
+<!ELEMENT Tienda (disfraces, complementos)>
+<!ELEMENT disfraces (disfraz+)>
+<!ELEMENT complementos (complemento+)>
+<!ELEMENT disfraz (partes*)>
+<!ELEMENT complemento EMPTY>
+<!ELEMENT partes EMPTY>
+<!ATTLIST disfraz id ID #REQUIRED>
+<!ATTLIST disfraz nombre CDATA #REQUIRED>
+<!ATTLIST disfraz genero (hombre | mujer | niño | niña) #REQUIRED>
+<!ATTLIST disfraz precio CDATA #REQUIRED>
+<!ATTLIST disfraz partes CDATA #REQUIRED>
+<!ATTLIST complemento id ID #REQUIRED>
+<!ATTLIST complemento idRef IDREFS #REQUIRED>
+<!ATTLIST complemento nombre CDATA #REQUIRED>
+<!ATTLIST complemento precio CDATA #REQUIRED>
+<!ATTLIST partes nombre CDATA #REQUIRED>
+]>
+
+<Tienda>
+  <disfraces>
+    <disfraz id="D1" nombre="Torero" genero="hombre" precio="45" partes="Mo">
+      <partes nombre="montera"></partes>
+    </disfraz>
+  </disfraces>
+  <complementos>
+    <complemento id="CE" idRef="D1" nombre="Espada" precio="5"></complemento>
+  </complementos>
+</Tienda> 

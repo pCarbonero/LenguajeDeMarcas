@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ZonaAzul
+[
+<!ELEMENT ZonaAzul (vehiculo*)>
+<!ELEMENT vehiculo (sancion?)>
+<!ELEMENT sancion EMPTY>
+<!ATTLIST vehiculo fecha CDATA #REQUIRED>
+<!ATTLIST vehiculo matricula ID #REQUIRED>
+<!ATTLIST vehiculo horaDePago CDATA #REQUIRED>
+<!ATTLIST vehiculo horaMax CDATA #REQUIRED>
+<!ATTLIST sancion horaSancion CDATA #REQUIRED>
+<!ATTLIST sancion sancion CDATA #FIXED "35">
+<!ATTLIST sancion foto CDATA #REQUIRED>
+]>
+
+<ZonaAzul>
+  <vehiculo fecha="20/01/23" matricula="ABC1234" horaDePago="11:00" horaMax="12:00"></vehiculo>
+  
+  <vehiculo fecha="22/01/23" matricula="GFC4567" horaDePago="12:03" horaMax="12:30">
+  <sancion horaSancion="12:48" sancion="35" foto="sí"/>
+  </vehiculo>
+  
+</ZonaAzul>

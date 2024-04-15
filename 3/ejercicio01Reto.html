@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto ej01</title>
+    <script>
+        let persona;
+        let personaJSON;
+        let persona2;
+        function ejercicio(){
+            persona = {
+            nombre: "Pablo",
+            edad: 21,
+            ciudad: "Sevilla"
+            };
+            
+            serializa();
+            
+            deserializa();
+
+            document.getElementById("c1").innerHTML = persona2.nombre;
+            document.getElementById("c2").innerHTML = persona2.edad;
+            document.getElementById("c3").innerHTML = persona2.ciudad;
+        }
+
+        
+        function serializa(){
+            personaJSON = JSON.stringify(persona);
+            console.log(personaJSON);
+        }
+
+        function deserializa(){
+            persona2 = JSON.parse(personaJSON);
+            console.log(persona2); 
+        }
+    </script>
+</head>
+<body>
+    <h1>LAS COSAS</h1>
+    <button onclick="ejercicio()">hace</button>
+    <hr>
+    <table>
+
+        <tr> 
+          <td>nombre</td>  
+          <td>edad</td>
+          <td>ciudad</td>
+      
+        </tr>
+        <tr>   
+          <td id = "c1"></td>  
+          <td id = "c2"></td>
+          <td id = "c3"></td>
+        </tr>
+      
+      </table>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Club
+[
+<!ELEMENT  Club (Equipos)>
+<!ELEMENT Equipos (equipo+)>
+<!ELEMENT equipo (jugadores, suplentes, entrenador, deporte, horario)>
+<!ELEMENT jugadores (nombre, apellidos, datos, edad)>
+<!ELEMENT suplentes (#PCDATA)>
+<!ELEMENT entrenador (nombre, apellidos, datos, edad)>
+<!ELEMENT datos (telefono, direccion)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT direccion (calle, numero)>
+<!ELEMENT calle (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT deporte (#PCDATA)>
+<!ELEMENT horario (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+]>
+
+<Club>
+  <Equipos>
+    <equipo>
+      <jugadores>
+          <nombre>Marcos</nombre>
+          <apellidos>Holguin</apellidos>
+            <datos>
+            <telefono>6663636</telefono>
+            <direccion>
+            <calle>Aragon</calle>
+            <numero>76</numero>
+            </direccion>
+          </datos>
+          <edad>20</edad>
+      </jugadores>
+      <suplentes>30</suplentes>
+      <entrenador>
+        <nombre>Pepe</nombre>
+          <apellidos>Martin</apellidos>
+          <datos>
+            <telefono>564564</telefono>
+            <direccion>
+            <calle>Afan</calle>
+            <numero>76</numero>
+            </direccion>
+          </datos>
+        <edad>36</edad>
+      </entrenador>
+      <deporte>Futbol</deporte>
+      <horario>15:15</horario>
+    </equipo>
+  </Equipos>
+</Club>
+

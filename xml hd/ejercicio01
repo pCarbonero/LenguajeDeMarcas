@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Libro
+[
+<!ELEMENT Libro (titulo, autor, categoria)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT categoria (#PCDATA)>
+]>
+
+<Libro>
+  <titulo></titulo>
+  <autor></autor>
+  <categoria></categoria>
+</Libro>

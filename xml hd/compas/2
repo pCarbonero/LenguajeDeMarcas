@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Agenda
+[
+<!ELEMENT Agenda (Contactos*)>
+<!ELEMENT Contactos (contacto*)>
+<!ELEMENT contacto (nombre, tlfnFijo*, tlfnMovil, pais)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT tlfnFijo (#PCDATA)>
+<!ELEMENT tlfnMovil (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+]>
+
+<Agenda>
+  <Contactos>
+    <contacto>
+      <nombre>Edupardo</nombre>
+      <tlfnFijo>954 96 32 54</tlfnFijo>
+      <tlfnMovil>689 32 54 11</tlfnMovil>
+      <pais>Bolivia</pais>
+    </contacto>  
+  </Contactos>
+</Agenda>

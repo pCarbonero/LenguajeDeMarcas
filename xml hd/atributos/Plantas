@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Huerto
+[
+<!ELEMENT Huerto (Plantas)>
+<!ELEMENT Plantas (planta+)>
+<!ELEMENT planta (cuidados)>
+<!ELEMENT cuidados EMPTY>
+<!ATTLIST planta nombre CDATA #REQUIRED>
+<!ATTLIST planta etiqueta ID #REQUIRED>
+<!ATTLIST planta tamaño (Pequeño | Mediano | Grande) #IMPLIED>
+<!ATTLIST planta enfermedad CDATA #IMPLIED>
+<!ATTLIST cuidados riego NMTOKEN #REQUIRED>
+<!ATTLIST cuidados exposicion (Sol | Sombra) #REQUIRED>
+]>
+
+<Huerto>
+  <Plantas>
+  <planta nombre="Lirio de los Valles" etiqueta="P1">
+    <cuidados riego="3" exposicion="Sol"></cuidados>
+  </planta>
+  <planta nombre="Rosas" etiqueta="P2" tamaño="Mediano">
+    <cuidados riego="5" exposicion="Sol"></cuidados>
+  </planta>  
+  </Plantas>
+</Huerto>

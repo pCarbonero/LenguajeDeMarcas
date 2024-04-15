@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Maps
+[
+<!ELEMENT Maps (nodos)>
+<!ELEMENT nodos (nodo)>
+<!ELEMENT nodo (nombre, id, Cercania*, distancia*)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT id  (#PCDATA)>
+<!ELEMENT Cercania (idCercania, distancia)>
+<!ELEMENT idCercania (#PCDATA)>
+<!ELEMENT distancia  (#PCDATA)>
+]>
+
+<Maps>
+  <nodos>
+    <nodo>
+      <nombre>N1</nombre>
+      <id>1</id>
+      <Cercania>
+          <idCercania>2</idCercania>
+          <distancia>7</distancia>
+      </Cercania>
+      <Cercania>
+        <idCercania>4</idCercania>
+        <distancia>2</distancia>
+      </Cercania> 
+    </nodo>  
+  </nodos>
+</Maps>

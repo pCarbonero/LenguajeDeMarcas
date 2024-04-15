@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Maps
+[
+<!ELEMENT Maps (nodos)>
+<!ELEMENT nodos (nodo+)>
+<!ELEMENT nodo EMPTY>
+<!ATTLIST nodo id ID #REQUIRED>
+<!ATTLIST nodo nombre CDATA #REQUIRED>
+<!ATTLIST nodo idCercano IDREFS #REQUIRED>
+<!ATTLIST nodo distancia NMTOKENS "99">
+]>
+
+<Maps>
+  <nodos>
+    <nodo id="N1" nombre="D1" idCercano="N2 N4" distancia="7 2"></nodo>
+    <nodo id="N2" nombre="D2" idCercano="N3 N4" distancia="1 2"></nodo>
+  </nodos>
+</Maps>

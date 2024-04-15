@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<IGGGAMES>
+  <consolas>
+    <PS5></PS5>
+    <NS></NS>
+    <XboxSeries></XboxSeries>
+  </consolas>
+  <juegos>
+    <TlozBotw></TlozBotw>
+    <Halo33></Halo33>
+    <DemonsSouls></DemonsSouls>
+    <MarioGorron></MarioGorron>
+  </juegos>
+  <tarjetas>
+    <googlePlay></googlePlay>
+    <Steam></Steam>
+    <eShop></eShop>
+  </tarjetas>
+</IGGGAMES>

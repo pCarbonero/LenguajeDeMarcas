@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Grupos
+[
+<!ELEMENT Grupos (Grupo*)>
+<!ELEMENT grupo (fecha, nacionalidad, numero, guia)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT nacionalidad (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT guia (#PCDATA)>
+]>
+
+<Grupos>
+<grupo>
+  <fecha></fecha>
+  <nacionalidad></nacionalidad>
+  <numero></numero>
+  <guia></guia>
+</grupo>
+</Grupos>
