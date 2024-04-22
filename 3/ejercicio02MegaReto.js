@@ -53,15 +53,15 @@ function calculaCosas(){
     let minimo = 999;
 
     // bucle que recorre el array
-    for(let i = 0; i < edades.length; i++){
-        suma += parseInt(edades[i]);
+    for(let i = 0; i < ArrObjetos.length; i++){
+        suma += parseInt(ArrObjetos[i].atributo2);
 
         // asignamos el maximo
-        if(i == 0 || parseInt(edades[i]) > maxima){
-            maxima = parseInt(edades[i]);
+        if(i == 0 || parseInt(ArrObjetos[i].atributo2) > maxima){
+            maxima = parseInt(ArrObjetos[i].atributo2);
         }
-        if(i == 0 || parseInt(edades[i]) < minimo){
-            minimo = parseInt(edades[i]);
+        if(i == 0 || parseInt(ArrObjetos[i].atributo2) < minimo){
+            minimo = parseInt(ArrObjetos[i].atributo2);
         }
     }
     media = suma/edades.length;
@@ -78,6 +78,7 @@ function borraUno(id){
     ArrObjetos.splice(id, 1);
     console.log(ArrObjetos);
     creaTabla();
+    calculaCosas();
 }
 
 function borraCasillas(objeto){
