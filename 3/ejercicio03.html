@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ej03</title>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+    <script src="ejercicio03.js">
+    </script>
+    
+    <style>
+        table, th, td{
+          border: 1px solid;  
+        }
+  
+      </style>
+</head>
+<body>
+    <h1>LAS COSAS</h1>
+    <hr>
+    
+    <input type="text" id="box1"></input>
+    <input type="text" id="box2"></input>
+    <input type="text" id="box3"></input>
+    <button onclick="ejercicio()">hace</button>
+    <br><hr>
+    <div id="checkBoxes">
+        <input type="checkbox" id="c1" name="hobbies" value="Musica">Música</input>
+        <input type="checkbox" id="c2" name="hobbies" value="Deportes">Deportes</input>
+        <input type="checkbox" id="c3" name="hobbies" value="Lectura">Lectura</input>
+        <input type="checkbox" id="c4" name="hobbies" value="Juegos">Juegos</input>
+        <input type="checkbox" id="c5" name="hobbies" value="Cine">Cine</input>
+    </div>
+
+    <hr>
+    <table id = "tabla">
+        <tr> 
+          <td>nombre</td>  
+          <td>edad</td>
+          <td>ciudad</td>
+          <td>hobbies</td>
+        </tr>     
+      </table>
+
+    <p id="suma"></p>
+    <p id="media"></p>
+    <p id="max"></p>
+    <p id="min"></p>
+</body>
+</html>
