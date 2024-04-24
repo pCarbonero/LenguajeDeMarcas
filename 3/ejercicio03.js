@@ -1,7 +1,5 @@
 // array edades
-let edades = [];
 let ArrObjetos = [];
-let contador = 0;
 
 function ejercicio(){
     if(compruebaCasillas() == true){
@@ -39,17 +37,12 @@ function creaObjeto(){
     objetoSerializado = serializa(objeto);                                                 
     objetoDeserializado = deserializa(objetoSerializado);
     ArrObjetos.push(objetoDeserializado);
-    addEdad(objeto);
 
     borraCasillas();
     creaTabla();
     uncheck();
 }
 
-function addEdad(objeto){
-    edades.push(objeto.atributo2);
-    calculaCosas();
-}
 
 function calculaCosas(){
     let suma = 0;
@@ -101,7 +94,6 @@ function creaTabla(){
         $('#tabla').append('<tr id= "t'+i+ '" onclick="borraUno('+i+')"><td>' + ArrObjetos[i].atributo1 +'</td><td>' 
         + ArrObjetos[i].atributo2 +'</td><td>' + ArrObjetos[i].atributo3 + '</td><td>' + ArrObjetos[i].atributo4 + '</td></tr>')
      }
-     contador++;
 }
 
 function serializa(objeto){
