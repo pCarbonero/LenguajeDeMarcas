@@ -43,6 +43,7 @@ function creaObjeto(){
     uncheck();
 
     enviaInfo(objetoDeserializado);
+    solicitud();
 }
 
 
@@ -124,17 +125,32 @@ let casillas=$('input[name=hobbies]').filter(':checked').map(function () {
 
 function enviaInfo(objetoDeserializado){
     const xhr = new XMLHttpRequest();
-   	xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
+   	xhr.open("POST", "https://lm.iesnervion.es/eco.php");
+    xhr.responseType = 'json';
 
    	xhr.onload = function() {
        	if (xhr.readyState == 4 && xhr.status == 201) { 
-           	console.log(JSON.parse(xhr.responseText));
+           	console.log(xhr.responseText);
        	} else {
            	console.log("Error: ${xhr.status}");
        	}
    	};
-   	xhr.send(objetoDeserializado);
+   	xhr.send(JSON.stringify(objetoDeserializado));
+}
 
+function solicitud(){
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://lm.iesnervion.es/eco.php");
+    xhr.responseType = "json"; 
+
+
+    xhr.onload = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const data = xhr.response;
+            console.log(data);
+        } else {
+            console.log("Error: ${xhr.status}");
+        }
+    };
+    xhr.send();
 }
