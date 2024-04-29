@@ -26,7 +26,7 @@ function creaObjeto(){
     let casillas=$('input[name=hobbies]').filter(':checked').map(function () {
         return $(this).val();
     }).get();
-    console.log(casillas);
+
     objeto = {
         atributo1 : $("#box1").val(),
         atributo2 : document.getElementById("box2").value,
@@ -42,8 +42,9 @@ function creaObjeto(){
     creaTabla();
     uncheck();
 
-    enviaInfo(objetoDeserializado);
-    solicitud();
+    enviaInfo(objeto);
+    console.log(objeto);
+   // solicitud();
 }
 
 
@@ -100,6 +101,7 @@ function creaTabla(){
         $('#tabla').append('<tr id= "t'+i+ '" onclick="borraUno('+i+')"><td>' + ArrObjetos[i].atributo1 +'</td><td>' 
         + ArrObjetos[i].atributo2 +'</td><td>' + ArrObjetos[i].atributo3 + '</td><td>' + ArrObjetos[i].atributo4 + '</td></tr>')
      }
+     calculaCosas();
 }
 
 function serializa(objeto){
@@ -126,19 +128,20 @@ let casillas=$('input[name=hobbies]').filter(':checked').map(function () {
 }).get();
 }
 
-function enviaInfo(objetoDeserializado){
+function enviaInfo(objeto){
     const xhr = new XMLHttpRequest();
-   	xhr.open("POST", "https://lm.iesnervion.es/eco.php");
+   	xhr.open("GET", "https://lm.iesnervion.es/eco.php");
     xhr.responseType = 'json';
 
    	xhr.onload = function() {
        	if (xhr.readyState == 4 && xhr.status == 201) { 
-           	console.log(xhr.responseText);
+           	console.log(xhr.response);
        	} else {
            	console.log("Error: ${xhr.status}");
        	}
    	};
-   	xhr.send(JSON.stringify(objetoDeserializado));
+    console.log(JSON.stringify(objeto));
+   	xhr.send(JSON.stringify(objeto));
 }
 
 function solicitud(){
