@@ -65,7 +65,10 @@ function calculaCosas(){
             minimo = parseInt(ArrObjetos[i].atributo2);
         }
     }
-    media = suma/edades.length;
+    media = suma/ArrObjetos.length;
+    if (ArrObjetos.length == 0){
+        media = 0;
+    }
 
     $("#suma").text(`Suma: ${suma}`);
     $("#media").text(`Media: ${media}`);

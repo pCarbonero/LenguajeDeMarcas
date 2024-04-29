@@ -62,7 +62,10 @@ function calculaCosas(){
             minimo = parseInt(ArrObjetos[i].atributo2);
         }
     }
-    media = suma/edades.length;
+    media = suma/ArrObjetos.length;
+    if (ArrObjetos.length == 0){
+        media = 0;
+    }
 
     $("#suma").text(`Suma: ${suma}`);
     $("#media").text(`Media: ${media}`);
@@ -94,6 +97,7 @@ function creaTabla(){
         $('#tabla').append('<tr id= "t'+i+ '" onclick="borraUno('+i+')"><td>' + ArrObjetos[i].atributo1 +'</td><td>' 
         + ArrObjetos[i].atributo2 +'</td><td>' + ArrObjetos[i].atributo3 + '</td><td>' + ArrObjetos[i].atributo4 + '</td></tr>')
      }
+     calculaCosas();
 }
 
 function serializa(objeto){
