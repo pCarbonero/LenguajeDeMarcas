@@ -16,7 +16,7 @@ function compruebaCasillas(){
     if(document.getElementById("box1").value == null || document.getElementById("box1").value == '' || document.getElementById("box2").value == null || document.getElementById("box2").value == '' || document.getElementById("box3").value == null || document.getElementById("box3").value == ''){
         sePuede = false
     }
-
+    
     return sePuede
 }
 
@@ -29,9 +29,10 @@ function creaObjeto(){
 
     objeto = {
         atributo1 : $("#box1").val(),
-        atributo2 : document.getElementById("box2").value,
-        atributo3 : document.getElementById("box3").value,
-        atributo4 : casillas
+        atributo2 : "Wellinton",
+        atributo3 : document.getElementById("box2").value,
+        atributo4 : document.getElementById("box3").value,
+        atributo5 : casillas
         
     };
     objetoSerializado = serializa(objeto);                                                 
@@ -42,7 +43,7 @@ function creaObjeto(){
     creaTabla();
     uncheck();
 
-    enviaInfo(objeto);
+    enviaInfo(JSON.stringify(ArrObjetos));
     console.log(objeto);
    // solicitud();
 }
@@ -56,14 +57,14 @@ function calculaCosas(){
 
     // bucle que recorre el array
     for(let i = 0; i < ArrObjetos.length; i++){
-        suma += parseInt(ArrObjetos[i].atributo2);
+        suma += parseInt(ArrObjetos[i].atributo3);
 
         // asignamos el maximo
-        if(i == 0 || parseInt(ArrObjetos[i].atributo2) > maxima){
-            maxima = parseInt(ArrObjetos[i].atributo2);
+        if(i == 0 || parseInt(ArrObjetos[i].atributo3) > maxima){
+            maxima = parseInt(ArrObjetos[i].atributo3);
         }
-        if(i == 0 || parseInt(ArrObjetos[i].atributo2) < minimo){
-            minimo = parseInt(ArrObjetos[i].atributo2);
+        if(i == 0 || parseInt(ArrObjetos[i].atributo3) < minimo){
+            minimo = parseInt(ArrObjetos[i].atributo3);
         }
     }
     media = suma/ArrObjetos.length;
@@ -99,7 +100,7 @@ function creaTabla(){
      $('#tabla').append('<tr><td>nombre</td><td>edad</td><td>ciudad</td><td>hobbies</td></tr>');
      for(let i = 0; i<ArrObjetos.length; i++){
         $('#tabla').append('<tr id= "t'+i+ '" onclick="borraUno('+i+')"><td>' + ArrObjetos[i].atributo1 +'</td><td>' 
-        + ArrObjetos[i].atributo2 +'</td><td>' + ArrObjetos[i].atributo3 + '</td><td>' + ArrObjetos[i].atributo4 + '</td></tr>')
+        + ArrObjetos[i].atributo2 +'</td><td>' + ArrObjetos[i].atributo3 + '</td><td>' + ArrObjetos[i].atributo4 + '</td><td>' + ArrObjetos[i].atributo5 + '</td></tr>')
      }
      calculaCosas();
 }
@@ -130,17 +131,17 @@ let casillas=$('input[name=hobbies]').filter(':checked').map(function () {
 
 function enviaInfo(objeto){
     const xhr = new XMLHttpRequest();
-   	xhr.open("GET", "https://lm.iesnervion.es/eco.php");
-    xhr.responseType = 'json';
+    xhr.open("POST", "https://lm.iesnervion.es/eco.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-   	xhr.onload = function() {
-       	if (xhr.readyState == 4 && xhr.status == 201) { 
-           	console.log(xhr.response);
-       	} else {
-           	console.log("Error: ${xhr.status}");
-       	}
-   	};
-    console.log(JSON.stringify(objeto));
+// Preparamos a continuación la respuesta
+    xhr.onload = function() {
+        if (xhr.readyState == 4 && xhr.status == 201) { // 200 || 201
+            console.log(JSON.parse(xhr.responseText));
+        } else {
+            console.log("Error: ${xhr.status}");
+        }
+    };
    	xhr.send(JSON.stringify(objeto));
 }
 
