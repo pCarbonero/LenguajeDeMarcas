@@ -29,10 +29,9 @@ function creaObjeto(){
 
     objeto = {
         atributo1 : $("#box1").val(),
-        atributo2 : "Wellinton",
-        atributo3 : document.getElementById("box2").value,
-        atributo4 : document.getElementById("box3").value,
-        atributo5 : casillas
+        edad : document.getElementById("box2").value,
+        atributo2 : document.getElementById("box3").value,
+        atributo3 : casillas
         
     };
     objetoSerializado = serializa(objeto);                                                 
@@ -44,7 +43,7 @@ function creaObjeto(){
     uncheck();
 
     enviaInfo(JSON.stringify(ArrObjetos));
-    console.log(objeto);
+    
    // solicitud();
 }
 
@@ -57,14 +56,14 @@ function calculaCosas(){
 
     // bucle que recorre el array
     for(let i = 0; i < ArrObjetos.length; i++){
-        suma += parseInt(ArrObjetos[i].atributo3);
+        suma += parseInt(ArrObjetos[i].edad);
 
         // asignamos el maximo
-        if(i == 0 || parseInt(ArrObjetos[i].atributo3) > maxima){
-            maxima = parseInt(ArrObjetos[i].atributo3);
+        if(i == 0 || parseInt(ArrObjetos[i].edad) > maxima){
+            maxima = parseInt(ArrObjetos[i].edad);
         }
-        if(i == 0 || parseInt(ArrObjetos[i].atributo3) < minimo){
-            minimo = parseInt(ArrObjetos[i].atributo3);
+        if(i == 0 || parseInt(ArrObjetos[i].edad) < minimo){
+            minimo = parseInt(ArrObjetos[i].edad);
         }
     }
     media = suma/ArrObjetos.length;
@@ -99,8 +98,7 @@ function creaTabla(){
      $('#tabla').empty(); 
      $('#tabla').append('<tr><td>nombre</td><td>edad</td><td>ciudad</td><td>hobbies</td></tr>');
      for(let i = 0; i<ArrObjetos.length; i++){
-        $('#tabla').append('<tr id= "t'+i+ '" onclick="borraUno('+i+')"><td>' + ArrObjetos[i].atributo1 +'</td><td>' 
-        + ArrObjetos[i].atributo2 +'</td><td>' + ArrObjetos[i].atributo3 + '</td><td>' + ArrObjetos[i].atributo4 + '</td><td>' + ArrObjetos[i].atributo5 + '</td></tr>')
+        $('#tabla').append('<tr id= "t'+i+ '" onclick="borraUno('+i+')"><td>' + ArrObjetos[i].atributo1 +'</td>><td>' + ArrObjetos[i].edad + '</td><td>' + ArrObjetos[i].atributo2 + '</td><td>' + ArrObjetos[i].atributo3 + '</td></tr>')
      }
      calculaCosas();
 }
@@ -132,17 +130,17 @@ let casillas=$('input[name=hobbies]').filter(':checked').map(function () {
 function enviaInfo(objeto){
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "https://lm.iesnervion.es/eco.php");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.responseType="json";
 
 // Preparamos a continuación la respuesta
     xhr.onload = function() {
         if (xhr.readyState == 4 && xhr.status == 201) { // 200 || 201
-            console.log(JSON.parse(xhr.responseText));
+            console.log(xhr.response);
         } else {
             console.log("Error: ${xhr.status}");
         }
     };
-   	xhr.send(JSON.stringify(objeto));
+   	xhr.send(objeto);
 }
 
 function solicitud(){
