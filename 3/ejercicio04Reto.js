@@ -10,7 +10,7 @@ function ejercicio(){
 function compruebaCasillas(){
     let sePuede = Boolean(true)
 
-    if(document.getElementById("box1").value == null || document.getElementById("box1").value == '' || document.getElementById("box2").value == null || document.getElementById("box2").value == '' || document.getElementById("box3").value == null || document.getElementById("box3").value == ''){
+    if(document.getElementById("pk").value == null || document.getElementById("pk").value == '' || document.getElementById("desc").value == null || document.getElementById("desc").value == '' || document.getElementById("prov").value == null || document.getElementById("prov").value == '' || document.getElementById("prec").value == null || document.getElementById("prec").value == ''){
         sePuede = false
     }
     
@@ -24,15 +24,15 @@ function creaObjeto(){
     objeto = {
         id : $("#pk").val(),
         descripcion : $("#desc").val(),
-        proveedor : $("#prov").val(),
+        idproveedor : $("#prov").val(),
         precio : $("#prec").val()       
     };
-    objetoSerializado = serializa(objeto);                                                 
-    objetoDeserializado = deserializa(objetoSerializado);
+    /*objetoSerializado = serializa(objeto);                                                 
+    objetoDeserializado = deserializa(objetoSerializado);*/
     //ArrObjetos.push(objetoDeserializado);
-
+    console.log(objeto);
     enviaInfo(JSON.stringify(objeto));
-    
+    solicitud();
    // solicitud();
 }
 
@@ -51,4 +51,21 @@ function enviaInfo(objeto){
         }
     };
     xhr.send(objeto);
+}
+
+function solicitud(){
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://lm.iesnervion.es/reto4.php");
+    xhr.responseType = "json"; 
+
+
+    xhr.onload = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const data = xhr.response;
+            console.log(data);
+        } else {
+            console.log("Error: ${xhr.status}");
+        }
+    };
+    xhr.send();
 }
