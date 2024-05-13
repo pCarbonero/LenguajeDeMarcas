@@ -54,7 +54,7 @@ function calculaCosas(){
     let media = 0;
     let minimo = 0;
 
-    // bucle que recorre el array
+    // bucle que recorre el arrays
     for(let i = 0; i < ArrObjetos.length; i++){
         suma += parseInt(ArrObjetos[i].edad);
 
@@ -128,6 +128,7 @@ let casillas=$('input[name=hobbies]').filter(':checked').map(function () {
 }
 
 function enviaInfo(objeto){
+
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "https://lm.iesnervion.es/eco.php");
     xhr.responseType="json";
@@ -136,11 +137,13 @@ function enviaInfo(objeto){
     xhr.onload = function() {
         if (xhr.readyState == 4 && xhr.status == 201) { // 200 || 201
             console.log(xhr.response);
+           
+           pruebaCosas(xhr.response);
         } else {
             console.log("Error: ${xhr.status}");
         }
     };
-   	xhr.send(objeto);
+    xhr.send(objeto);
 }
 
 function solicitud(){
@@ -158,4 +161,13 @@ function solicitud(){
         }
     };
     xhr.send();
+}
+
+function pruebaCosas(received){
+    /*let calculos = received;
+    console.log(calculos);*/
+    console.log('Suma ' + received.calculos.suma);
+    console.log('Max ' + received.calculos.max);
+    console.log('Min ' + received.calculos.min);
+    console.log('Media ' + received.calculos.media);
 }
