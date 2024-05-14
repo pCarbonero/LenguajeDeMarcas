@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="Reto4.js"></script>
+    <title>RETO EJ4</title>
+</head>
+<body>
+    <div id="form">
+        <input type="text" id="desc" placeholder="Descripcion">
+        <label for="descripcion"></label>
+        <input type="text" id="idP" placeholder="IDProv">
+        <label for="IDProv"></label>
+        <input type="number" id="precio" placeholder="Precio">
+        <label for="precio"></label>
+        <button id="submit" onclick="data()">Enviar</button>
+
+    </div>
+    <br>
+
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripcion</th>
+                <th>ID Proveedor</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+        </tbody>
+    </table>
+
+    <div id="error"></div>
+</body>
+</html>

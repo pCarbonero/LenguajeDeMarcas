@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Tabla</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="text" id="edad" placeholder="Edad">
+        <input type="text" id="ciudad" placeholder="Ciudad">
+
+        <br>
+
+        <p><b>Hobbies</b></p>
+        <input type="checkbox" name="Hobbies" value="Deporte" onchange="compruebaCheck()">
+        <label for="Hobbies">Deporte</label>
+        <input type="checkbox" name="Hobbies" value="Lectura" onchange="compruebaCheck()">
+        <label for="Hobbies">Lectura</label>
+        <input type="checkbox" name="Hobbies" value="Musica" onchange="compruebaCheck()">
+        <label for="Hobbies">Musica</label>
+        <input type="checkbox" name="Hobbies" value="Juegos" onchange="compruebaCheck()">
+        <label for="Hobbies">Juegos</label>
+        <input type="checkbox" name="Hobbies" value="Cine" onchange="compruebaCheck()">
+        <label for="Hobbies">Cine</label>
+        <input type="checkbox" name="Hobbies" value="Teatro" onchange="compruebaCheck()">
+        <label for="Hobbies">Teatro</label>
+        <input type="checkbox" name="Hobbies" value="Coleccionismo" onchange="compruebaCheck()">
+        <label for="Hobbies">Coleccionismo</label>
+        <input type="checkbox" name="Hobbies" value="Bricolaje" onchange="compruebaCheck()">
+        <label for="Hobbies">Bricolaje</label>
+        <input type="checkbox" name="Hobbies" value="Cosplay" onchange="compruebaCheck()">
+        <label for="Hobbies">Cosplay</label>
+
+        <br>
+        <button onclick="creaUsuario()">Confirmar</button>
+        
+    </div>
+    <table border="2px">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+                <th>Hobbies</th>
+            </tr>
+        </thead>
+        <tbody id="tabla">
+            
+        </tbody>
+        
+    </table>  
+
+    
+    <br>
+    Suma: <span id="suma"></span><br>
+    Media: <span id="media"></span><br>
+    Maximo: <span id="maximo"></span><br>
+    Minimo: <span id="minimo"></span>
+    <script src="ejercicio4.js"></script>
+    <p></p>
+</body>
+</html>

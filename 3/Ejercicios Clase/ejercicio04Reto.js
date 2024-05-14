@@ -10,7 +10,7 @@ function ejercicio(){
 function compruebaCasillas(){
     let sePuede = Boolean(true)
 
-    if(document.getElementById("pk").value == null || document.getElementById("pk").value == '' || document.getElementById("desc").value == null || document.getElementById("desc").value == '' || document.getElementById("prov").value == null || document.getElementById("prov").value == '' || document.getElementById("prec").value == null || document.getElementById("prec").value == ''){
+    if(document.getElementById("desc").value == null || document.getElementById("desc").value == '' || document.getElementById("prov").value == null || document.getElementById("prov").value == '' || document.getElementById("prec").value == null || document.getElementById("prec").value == ''){
         sePuede = false
     }
     
@@ -22,7 +22,6 @@ function creaObjeto(){
     let objetoDeserializado
 
     objeto = {
-        id : $("#pk").val(),
         descripcion : $("#desc").val(),
         idproveedor : $("#prov").val(),
         precio : $("#prec").val()       
